@@ -9,9 +9,9 @@ with open('model/model_sms_classification.pkl', 'rb') as file:
 app = FastAPI()
 templates = Jinja2Templates(directory="templates") 
 
-@app.get("/", response_class=HTMLResponse)
-async def read_root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+# @app.get("/", response_class=HTMLResponse)
+# async def read_root(request: Request):
+#     return templates.TemplateResponse("index.html", {"request": request})
 
 @app.get("/api/check-spam/{text}")
 
