@@ -8,7 +8,7 @@ with open('model/model_sms_classification.pkl', 'rb') as file:
 
 app = FastAPI()
 
-@app.get("/check-spam/{text}")
+@app.get("api/check-spam/{text}")
 
 def check_spam(text: str):
 

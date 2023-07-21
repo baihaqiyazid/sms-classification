@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Detection</title>
+</head>
+<body>
+    <h1>Spam Detection</h1>
+    <input type="text" id="textInput" placeholder="Enter text">
+    <button onclick="checkSpam()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        async function checkSpam() {
+            const textInput = document.getElementById('textInput').value;
+            const response = await fetch('/api/check-spam/' + encodeURIComponent(textInput));
+            const data = await response.json();
+            document.getElementById('result').innerText = data.message;
+        }
+    </script>
+</body>
+</html>
